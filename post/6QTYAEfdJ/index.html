@@ -1,0 +1,394 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>iTerm2 配置详解——打造赏心悦目且易用的 Mac 终端 - Sonatta: 生活小栈</title>
+<link rel="shortcut icon" href="https://kokurasona.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kokurasona.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kokurasona.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="iTerm2 配置详解——打造赏心悦目且易用的 Mac 终端 - Sonatta: 生活小栈 - Atom Feed" href="https://kokurasona.github.io/atom.xml">
+
+    
+
+  <meta name="description" content="前言
+说来惭愧，每每当我因为各种原因不得不重制电脑时，做好充分备份工作的我却一次又一次的忘记给 iTerm2 配置做备份，而这样的疏忽大意导致的后果——如果这也能称得上是后果的话——就是我不得不一次又一次的重新去网上找 iTerm2 的配置..." />
+  <meta property="og:title" content="iTerm2 配置详解——打造赏心悦目且易用的 Mac 终端 - Sonatta: 生活小栈">
+  <meta property="og:description" content="前言
+说来惭愧，每每当我因为各种原因不得不重制电脑时，做好充分备份工作的我却一次又一次的忘记给 iTerm2 配置做备份，而这样的疏忽大意导致的后果——如果这也能称得上是后果的话——就是我不得不一次又一次的重新去网上找 iTerm2 的配置..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kokurasona.github.io/post/6QTYAEfdJ/" />
+  <meta property="og:image" content="https://kokurasona.github.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="iTerm2 配置详解——打造赏心悦目且易用的 Mac 终端 - Sonatta: 生活小栈">
+  <meta name="twitter:description" content="前言
+说来惭愧，每每当我因为各种原因不得不重制电脑时，做好充分备份工作的我却一次又一次的忘记给 iTerm2 配置做备份，而这样的疏忽大意导致的后果——如果这也能称得上是后果的话——就是我不得不一次又一次的重新去网上找 iTerm2 的配置...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kokurasona.github.io/post/6QTYAEfdJ/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kokurasona.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kokurasona.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Sonatta: 生活小栈
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          iTerm2 配置详解——打造赏心悦目且易用的 Mac 终端
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022-02-06 · 6 min read</div>
+          
+            <a href="https://kokurasona.github.io/tag/jiao-cheng/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              教程
+            </a>
+          
+            <a href="https://kokurasona.github.io/tag/you-hua/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              优化
+            </a>
+          
+            <a href="https://kokurasona.github.io/tag/mac/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Mac
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="前言">前言</h1>
+<p>说来惭愧，每每当我因为各种原因不得不重制电脑时，做好充分备份工作的我却一次又一次的忘记给 iTerm2 配置做备份，而这样的疏忽大意导致的后果——如果这也能称得上是后果的话——就是我不得不一次又一次的重新去网上找 iTerm2 的配置教程。终于，在我又一次忘了给 iTerm 做备份而不得不重复这个令我崩溃的步骤时，我决定写一篇配置教程以绝后患。</p>
+<h1 id="展示">展示</h1>
+<p>考虑到人和人的审美毕竟还是不同的，所以我们废话少说，先上成品：<br>
+<img src="https://kokurasona.github.io/post-images/1644204369143.png" alt="" loading="lazy"><br>
+OK，如果你觉得这个最终效果符合你的审美的话，那么就继续往下看。</p>
+<h1 id="安装-iterm2">安装 iTerm2</h1>
+<p>当然，第一步是<a href="https://iterm2.com/">下载 iTerm2 </a>并安装<br>
+<img src="https://kokurasona.github.io/post-images/1644149682273.jpg" alt="" loading="lazy"></p>
+<h1 id="配置">配置</h1>
+<p>首先设置 iTerm2 为默认终端<br>
+<img src="https://kokurasona.github.io/post-images/1644149989131.png" alt="" loading="lazy"></p>
+<h1 id="将默认-shell-换为-zsh">将默认 Shell 换为 zsh</h1>
+<p>先查询系统中所有的 shell</p>
+<p><code>cat /etc/shells</code><br>
+<img src="https://kokurasona.github.io/post-images/1644150124127.png" alt="" loading="lazy"><br>
+一般而言 Mac 的 Terminal 用的 Shell 是 bash，现在将其换成 zsh</p>
+<p><code>chsh -s /bin/zsh</code></p>
+<h1 id="安装并配置-oh-my-zsh">安装并配置 oh-my-zsh</h1>
+<h2 id="安装-oh-my-zsh">安装 oh-my-zsh</h2>
+<p>oh-my-zsh 是一款基于 zsh 的，由社区驱动的命令行工具，我们接下来的很多配置要依赖其实现。</p>
+<p>使用 curl 安装：</p>
+<p><code>sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</code></p>
+<p>或使用 wget 安装：</p>
+<p><code>sh -c &quot;$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)&quot;</code></p>
+<p>如果你连不上 GitHub，也可以使用镜像站 https://gitee.com/mirrors/oh-my-zsh/blob/master/tools/install.sh 将上述安装方式的网址替换为这个即可。</p>
+<h2 id="修改主题">修改主题</h2>
+<p>在 iTerm2 中输入 <code>vim ~/.zshrc</code></p>
+<p>找到 ZSH_THEME 一行，将其修改为 <code>ZSH_THEME=&quot;agnoster&quot;</code></p>
+<p>当然，你也可以修改为其他主题，不过后续配置操作可能会有所不同。<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/themes">主题参考</a></p>
+<p>这个主题需要加载特定的字体，点击下载 <a href="https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf">Meslo</a> 字体，双击将字体安装至系统字体册。</p>
+<p>打开 iTerm2 设置，Profiles -&gt; Text -&gt; Font，选择 Meslo LG M for Powerline，Regular，字号我这里选的是 12。<br>
+<img src="https://kokurasona.github.io/post-images/1644150241460.png" alt="" loading="lazy"></p>
+<h2 id="修改配色方案">修改配色方案</h2>
+<p><a href="https://ethanschoonover.com/solarized/">下载 Solarized</a>，解压。</p>
+<p>还是在 iTerm2 的设置里，Profiles -&gt; Colors -&gt; Color Presets... -&gt; Import<br>
+<img src="https://kokurasona.github.io/post-images/1644150267819.png" alt="" loading="lazy"><br>
+导入之前解压好的文件夹中的 Solarized Dark.itermcolors 文件，导入完成后并不会自动更换，需要手动选择更换。</p>
+<h2 id="安装自动命令提示插件">安装自动命令提示插件</h2>
+<p>在 iTerm 2 中输入：</p>
+<pre><code class="language-shell">cd .oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+</code></pre>
+<p>一目了然，这一步是为了将 zsh-autosuggestions 插件下载到 oh-my-zsh 到插件目录下。</p>
+<p>输入 <code>vim ~/.zshrc</code>，找到 plugins 一行，默认是这样：</p>
+<p><code>plugins=(git)</code></p>
+<p>将其修改为：</p>
+<p><code>plugins=(git zsh-autosuggestions)</code></p>
+<p>到这里 zsh-autosuggestions 插件就已经安装完了，重启 iTerm2 即可生效。</p>
+<p>PS：细心的朋友可能会发现自动命令提示有一些问题，我会在后文提供解决方案。</p>
+<h2 id="安装语法高亮插件">安装语法高亮插件</h2>
+<p>这里使用 Homebrew 安装 zsh-syntax-highlighting 插件，没装 Homebrew 的可以参考这篇文章安装：<a href="https://www.cnblogs.com/joyce33/p/13376752.html">mac下高效安装 homebrew 及完美避坑姿势</a></p>
+<p><code>brew install zsh-syntax-highlighting</code></p>
+<p>安装完成后注意会提示一个命令，形如：</p>
+<p><code>source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</code></p>
+<p>然后还是 <code>vim ~/.zshrc</code> 打开配置文件，将刚刚提示的命令插入配置文件中。</p>
+<p>输入命令加载插件：</p>
+<p><code>source ~/.zshrc</code></p>
+<h1 id="给-vim-及-ls-配色">给 Vim 及 ls 配色</h1>
+<h2 id="配置-vim-颜色">配置 Vim 颜色</h2>
+<p>用 cd 命令移动到之前下载解压好的 solarized 文件夹的 /solarized/vim-colors-solarized/colors 目录，输入：</p>
+<pre><code class="language-shell">mkdir -p ~/.vim/colors 
+cp solarized.vim ~/.vim/colors/
+</code></pre>
+<p>输入 <code>vim ~/.vimrc</code> 打开vim配置文件，插入以下三行配置：</p>
+<pre><code class="language-shell">syntax enable
+set background=dark
+colorscheme solarized
+</code></pre>
+<h2 id="配置-ls-颜色">配置 ls 颜色</h2>
+<p>这部分就很简单了，老样子 <code>vim ~/.zshrc</code> 打开配置文件，插入：</p>
+<pre><code class="language-shell">export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
+</code></pre>
+<p><strong>注意将该命令置于底端，不然可能会被覆盖而无法正确执行</strong><br>
+配色方案可自定义，具体来说就是通过修改 LSCOLORS 后的内容进行修改，想要自定义颜色的<a href="https://geoff.greer.fm/lscolors/">点这里</a>。</p>
+<h1 id="调整-iterm2-及-status-bar-设置">调整 iTerm2 及 Status Bar 设置</h1>
+<p>打开 iTerm2 设置，Profiles -&gt; Session -&gt; Miscellaneous，勾选底部的 Status bar enabled。<br>
+<img src="https://kokurasona.github.io/post-images/1644150402276.png" alt="" loading="lazy"><br>
+点击旁边的 Configure Status Bar<br>
+<img src="https://kokurasona.github.io/post-images/1644150416994.png" alt="" loading="lazy"><br>
+选择你想要添加的 Component，然后把底部的🌈Auto-Rainbow 选项设为自动。</p>
+<p>接下来进入 Appearance 选项卡，在 General 中将 Theme 修改为 Minimal 以实现顶栏沉浸的效果，再将 Status bar location 选择为 Bottom，让其在底部显示。<br>
+<img src="https://kokurasona.github.io/post-images/1644150445957.png" alt="" loading="lazy"><br>
+可能还有写朋友记得我之前提到过自动命令提示有些问题，这里有一个小坑，即自动弹出的提示颜色和背景颜色完全一致，导致根本看不见命令提示，知道了问题所在解决起来就很简单了，直接在 Profiles -&gt; Color -&gt; ANSI Colors 中修改 Black 行 Bright 列的颜色即可。<br>
+<img src="https://kokurasona.github.io/post-images/1644150672664.png" alt="" loading="lazy"><br>
+但是——这里要说但是——请注意，Vim 的配色也是与之有关的，结果便是如果修改的颜色过于明亮就会导致在 Vim 中看不清字，这里我的解决方法比较简单粗暴，找了一个既能看得清也不至于遮挡字的颜色，我用的是 <code>304243</code></p>
+<p>到此为止所有的配置就结束了，有些配置可能需要重启 iTerm 才能生效，无论如何，enjoy it!</p>
+<h1 id="总结">总结</h1>
+<p>说实话，一个简单的 iTerm2 配置，里面的坑还是有不少的，我也是有了前几次的经验才找到了一套相对好用的方案，从这个角度来说每次忘记备份配置也许不算坏事，<s>但是我也不想再经历一次了</s>，总之希望对你能有所帮助。</p>
+<p>参考：</p>
+<p><a href="https://www.jianshu.com/p/405956cdaca6">ITerm2配置-让你的mac命令行更加丰富高效</a></p>
+<p><a href="https://sspai.com/post/63241">iTerm2 配置和美化</a></p>
+<p><strong>注：安装 iTerm2 一节中出现的图取自 <a href="https://iterm2.com/">iTerm2 官网</a>，版权归 iTerm2 官方所有。</strong></p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E5%B1%95%E7%A4%BA">展示</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-iterm2">安装 iTerm2</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
+<li><a href="#%E5%B0%86%E9%BB%98%E8%AE%A4-shell-%E6%8D%A2%E4%B8%BA-zsh">将默认 Shell 换为 zsh</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%B9%B6%E9%85%8D%E7%BD%AE-oh-my-zsh">安装并配置 oh-my-zsh</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85-oh-my-zsh">安装 oh-my-zsh</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98">修改主题</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88">修改配色方案</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E8%87%AA%E5%8A%A8%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E6%8F%92%E4%BB%B6">安装自动命令提示插件</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE%E6%8F%92%E4%BB%B6">安装语法高亮插件</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%99-vim-%E5%8F%8A-ls-%E9%85%8D%E8%89%B2">给 Vim 及 ls 配色</a>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE-vim-%E9%A2%9C%E8%89%B2">配置 Vim 颜色</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-ls-%E9%A2%9C%E8%89%B2">配置 ls 颜色</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B0%83%E6%95%B4-iterm2-%E5%8F%8A-status-bar-%E8%AE%BE%E7%BD%AE">调整 iTerm2 及 Status Bar 设置</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kokurasona.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kokurasona.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+</body>
+
+</html>

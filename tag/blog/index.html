@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Sonatta: 生活小栈</title>
+<link rel="shortcut icon" href="https://kokurasona.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kokurasona.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kokurasona.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Sonatta: 生活小栈 - Atom Feed" href="https://kokurasona.github.io/atom.xml">
+
+    
+
+  <meta name="description" content="孤坐有谁同此意 白云空见渚禽还" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://kokurasona.github.io/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        Blog
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kokurasona.github.io/post/Ux6xKOeOx/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Gridea 同步失败？谈谈我的解决办法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2021-07-27</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        注：Gridea 已于 2022 年 5 月 17 日发布 0.9.3 版本，解决了本文所提到的同步问题，因此本文可能已过时而变得不再实用。
+前言
+去年，我写了一篇文章【10 分钟教你创建个人网站——傻瓜式的网站搭建教学】，介绍如何运用 G...
+      </div>
+      <a href="https://kokurasona.github.io/post/Ux6xKOeOx/" class="btn">
+        阅读
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kokurasona.github.io/post/Jbuc9l0W5/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          10 分钟教你创建个人网站——傻瓜式的网站搭建教学
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-02-23</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        前言
+在疫情肆虐全国，且尚未平息的当下，相信有很多被迫宅在家里的 有 志 青 年 ，不是葛优瘫在家里过养老生活，就是漫游在网课的海洋里（大雾）。由于我也没什么事情干，那么今天就给大家带来一篇教程，用通俗易懂的方式教你如何搭建个人网站来展（酷...
+      </div>
+      <a href="https://kokurasona.github.io/post/Jbuc9l0W5/" class="btn">
+        阅读
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kokurasona.github.io/media/scripts/main.js"></script>
+</body>
+</html>
